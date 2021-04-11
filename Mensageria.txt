@@ -38,3 +38,5 @@ EXCHANGE: Tem a tarefa de receber a mensagem enviada pelo produtor e encaminha p
 Deadletter: Para controle de erro (caso o producer ou o consumer der algum tipo de erro, essa mensagem irá cair na Deadletter e podemos reprocessar a mensagem).
 
 
+
+
