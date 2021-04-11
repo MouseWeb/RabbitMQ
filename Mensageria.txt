@@ -23,5 +23,18 @@ Event-Driven Microservices = usa Domain Events para integração.
 
 -------------------------------------------------------------------------------------------------------
 
+Publish -> publica em uma EXCHANGE -> que vai rotiar isso para uma -> QUEUE que vai ser consumida pelo um -> CONSUMIDOR. 
+
+EXCHANGE: Tem a tarefa de receber a mensagem enviada pelo produtor e encaminha para a fila destinada pelo produtor 
+          para ser consumida pelo consumidor. 
+
+         -- O produtor envia uma mensagem e é interceptada por uma EXCHANGE que vai encaminhar essa mensagem para uma fila 
+            e a QUEUE vai amarzenar essa mensagem em fila até o consumidor de fato consuma ela --
+
+          Por quer, ela vai ficar amarzenada ? o consumidor pode está offline, ou pode está fazendo outra tarefa e ele não pode está consumindo essa mensagem em realtime.
+          Então ele vai esperar ali, e quando o consumidor estiver pronto para consumila essa mensagem irá ser processada. 
+
+
+Deadletter: Para controle de erro (caso o producer ou o consumer der algum tipo de erro, essa mensagem irá cair na Deadletter e podemos reprocessar a mensagem).
 
 
