@@ -13,4 +13,3 @@ spring:
         producer: rk.producer
       deadletter:
         producer: dl.procucer
-
