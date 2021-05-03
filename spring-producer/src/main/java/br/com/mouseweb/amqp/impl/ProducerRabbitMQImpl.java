@@ -23,7 +23,10 @@ public class ProducerRabbitMQImpl implements AmqpProducer<MensagemDto> {
     @Override
     public void producer(MensagemDto mensagemDto) {
         try {
-            rabbitTemplate.convertAndSend(exchange, queue, mensagemDto);
+            for (int i = 0; i < 1000; i++) {
+                rabbitTemplate.convertAndSend(exchange, queue, mensagemDto);
+            }
+
         } catch ( Exception ex ) {
             throw new AmqpRejectAndDontRequeueException(ex);
         }
