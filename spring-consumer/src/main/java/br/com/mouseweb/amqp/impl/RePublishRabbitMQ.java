@@ -57,6 +57,13 @@ public class RePublishRabbitMQ implements AmqpRePublish {
         });
     }
 
+    public void forcaRePublish() {
+        List<Message> messages = getQueueMessages();
+        messages.forEach(message -> {
+            rabbitTemplate.send(exchange, queue, message);
+        });
+    }
+
     //Retorna todos as mensagem que está em dead-letter para processar
     private List<Message> getQueueMessages() {
         List<Message> messages = new ArrayList<>();
