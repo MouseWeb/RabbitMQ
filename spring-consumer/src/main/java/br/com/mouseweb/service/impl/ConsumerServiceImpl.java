@@ -11,7 +11,7 @@ public class ConsumerServiceImpl implements ConsumerService {
     @Override
     public void action(MensagemDto mensagemDto) throws Exception {
         //throw new Exception("Erro ao consumir a mensagem");
-        if ("teste".equalsIgnoreCase(mensagemDto.getText())){
+        if ("testeee".equalsIgnoreCase(mensagemDto.getText())){
             throw new AmqpRejectAndDontRequeueException("ERROR - Teste");
         } else {
             System.out.println(mensagemDto.getText());

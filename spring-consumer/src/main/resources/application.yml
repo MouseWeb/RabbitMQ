@@ -15,3 +15,7 @@ spring:
         producer: dl.producer
       parking-lot:
         producer: pl.producer
+    listener:
+      time-retry: 00 41 02 * * *
+    retries:
+      retry: 2
