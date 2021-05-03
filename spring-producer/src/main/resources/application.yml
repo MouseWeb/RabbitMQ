@@ -11,7 +11,5 @@ spring:
         producer: ex.producer
       routing-key:
         producer: rk.producer
-      dead-letter:
+      deadletter:
         producer: dl.procucer
-      parking-lot:
-        producer: pl.procucer
