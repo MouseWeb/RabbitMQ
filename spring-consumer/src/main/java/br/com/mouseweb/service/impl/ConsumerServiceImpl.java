@@ -2,9 +2,10 @@ package br.com.mouseweb.service.impl;
 
 import br.com.mouseweb.dto.MensagemDto;
 import br.com.mouseweb.service.ConsumerService;
-import org.springframework.amqp.AmqpRejectAndDontRequeueException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class ConsumerServiceImpl implements ConsumerService {
 
@@ -12,9 +13,9 @@ public class ConsumerServiceImpl implements ConsumerService {
     public void action(MensagemDto mensagemDto) throws Exception {
         //throw new Exception("Erro ao consumir a mensagem");
         if ("testeeee".equalsIgnoreCase(mensagemDto.getText())){
-            throw new AmqpRejectAndDontRequeueException("ERROR - Teste");
+            throw new Exception("ERROR - Teste");
         } else {
-            System.out.println(mensagemDto.getText());
+            log.debug(mensagemDto.getText());
         }
 
     }
